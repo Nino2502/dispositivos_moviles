@@ -1,0 +1,64 @@
+
+
+  .button-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  ion-button {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  ion-item h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+  }
+
+  ion-item p {
+    margin: 5px 0;
+    color: #555;
+  }
+
+  ion-toolbar {
+    background-color: #1e88e5; /* Primary background color */
+  }
+
+  ion-content {
+    background-color: #f5f5f5; /* Light background color for better contrast */
+  }
+
+
+  /* Media Queries */
+  @media (max-width: 600px) {
+    ion-item h2 {
+      font-size: 1rem; /* Smaller font for small screens */
+    }
+    ion-item p {
+      font-size: 0.9rem; /* Adjust paragraph size for better readability */
+    }
+    ion-button {
+      max-width: 100%; /* Full width buttons on small screens */
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 900px) {
+    ion-item h2 {
+      font-size: 1.1rem; /* Slightly larger font on medium screens */
+    }
+    ion-button {
+      max-width: 400px; /* Larger buttons on medium screens */
+    }
+  }
+
+  @media (min-width: 901px) {
+    ion-item h2 {
+      font-size: 1.3rem; /* Larger font for desktop */
+    }
+    ion-button {
+      max-width: 300px; /* Maintain width on large screens */
+    }
+  }
+

@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title color="light">Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large" color="light">Productos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Formulario para agregar o editar productos -->
+  <ion-list aria-labelledby="productosForm">
+    <ion-item>
+      <ion-label position="stacked" id="nombreProductoLabel">Nombre del producto</ion-label>
+      <ion-input placeholder="Ej: Televisor" [(ngModel)]="producto_nuevo.name" aria-labelledby="nombreProductoLabel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked" id="precioProductoLabel">Precio</ion-label>
+      <ion-input type="number" placeholder="Ej: 500" [(ngModel)]="producto_nuevo.price" aria-labelledby="precioProductoLabel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked" id="descripcionProductoLabel">Descripción</ion-label>
+      <ion-textarea placeholder="Ej: Televisor LED 40 pulgadas" [(ngModel)]="producto_nuevo.description" aria-labelledby="descripcionProductoLabel"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked" id="fechaProductoLabel">Fecha de alta</ion-label>
+      <ion-datetime [(ngModel)]="producto_nuevo.date" display-format="YYYY-MM-DD" aria-labelledby="fechaProductoLabel"></ion-datetime>
+    </ion-item>
+
+    <div class="button-container">
+      <ion-button expand="block" color="secondary" (click)="addOrUpdateProduct()" aria-label="Guardar producto">
+        <span style="color: white;">Agregar Producto</span>
+      </ion-button>
+    </div>
+  </ion-list>
+
+  <!-- Lista de productos registrados -->
+  <ion-list aria-labelledby="productosRegistrados">
+    <ion-list-header id="productosRegistrados">
+      <h2 style="color: #333;">Productos Registrados</h2>
+    </ion-list-header>
+
+    <ion-item *ngFor="let product of nuevos_producto">
+      <ion-label>
+        <h2 style="color: #000;">{{ product.name }}</h2>
+        <p style="color: #555;">Precio: ${{ product.price }}</p>
+        <p style="color: #555;">{{ product.description }}</p>
+        <p style="color: #555;">Fecha de alta: {{ product.date }}</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button color="tertiary" [attr.aria-label]="'Editar ' + product.name">
+          <ion-icon slot="icon-only" name="pencil" style="color: white;"></ion-icon>
+        </ion-button>
+        <ion-button color="danger" [attr.aria-label]="'Eliminar ' + product.name">
+          <ion-icon slot="icon-only" name="trash" style="color: white;"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

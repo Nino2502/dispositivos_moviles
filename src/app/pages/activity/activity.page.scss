@@ -1,10 +1,4 @@
-ion-datetime{
 
-    justify-content: center;
-    margin-left: 500px;
-
-
-}
 
 .button-container {
     display: flex;
@@ -39,6 +33,62 @@ ion-datetime{
   ion-button {
     --background: #005cbf; // botón con alto contraste
     --color: #ffffff; // texto blanco en el botón
+  }
+
+
+
+
+  ion-content {
+    /*
+    Esto asegura que haya un espacio alrededor del contenido en diferentes pantallas.
+    */
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    --padding-left: 10px;
+    --padding-right: 10px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  ion-button {
+    width: 100%;
+    max-width: 300px; /* Asegura que los botones no sean demasiado grandes en pantallas grandes */
+  }
+
+  /* Media queries para ajustar el diseño en dispositivos pequeños */
+  @media (max-width: 600px) {
+    ion-item {
+      font-size: 0.9rem;
+    }
+
+    .button-container {
+      margin-top: 10px;
+    }
+
+    ion-input, ion-datetime {
+      font-size: 0.9rem;
+    }
+  }
+
+  /*
+  Es diferentes tamaños de fuentes y espaciado para pantallas pequeñas y grandes
+  */
+  @media (min-width: 600px) {
+    ion-title {
+      font-size: 2rem;
+    }
+
+    ion-item {
+      font-size: 1.1rem;
+    }
+
+    ion-input, ion-datetime {
+      font-size: 1.1rem;
+    }
   }
   
   
